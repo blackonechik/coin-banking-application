@@ -193,7 +193,7 @@ export default async function createCurrency() {
       userCurrencies,
     );
 
-    const socket = new WebSocket("ws://localhost:3000/currency-feed");
+    const socket = new WebSocket("wss://api-coin.blackonechik.ru/currency-feed");
     const currencyRateChangeArray = [];
 
     socket.addEventListener("message", (event) => {

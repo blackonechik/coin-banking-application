@@ -2,7 +2,7 @@ import "nprogress/nprogress.css";
 import Cookies from "js-cookie";
 import nProgress from "nprogress";
 
-const backendUrl = "http://localhost:3000";
+const backendUrl = "https://api-coin.blackonechik.ru";
 
 async function fetchData(url, options) {
   nProgress.start();
