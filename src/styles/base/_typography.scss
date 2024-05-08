@@ -1,0 +1,111 @@
+@import "../base/_colors";
+
+@mixin text {
+  color: $black;
+  text-align: left;
+}
+
+@mixin titleText {
+  @include text;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+@mixin bigBoldText {
+  @include text;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+@mixin bigSemiBoldText {
+  @include text;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+@mixin semiBigMediumText {
+  @include text;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+@mixin mediumSemiBoldText {
+  @include text;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@mixin mediumText {
+  @include text;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+@mixin mediumRedularText {
+  @include text;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+@mixin mediumBoldText {
+  @include text;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+@mixin semiMediumMediumText {
+  @include text;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@mixin semiMediumRegularText {
+  @include text;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin semiMediumLightText {
+  @include text;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+@mixin smallMediumText {
+  @include text;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@mixin smallRegularText {
+  @include text;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@mixin semiSmallMediumText {
+  @include text;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@mixin semiSmallRegularText {
+  @include text;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+}

@@ -1,0 +1,23 @@
+@import "base/_typography";
+@import "base/_buttons";
+
+.header {
+  padding: 25px 50px;
+  background-color: $primary;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__left-menu {
+    display: flex;
+    gap: 25px
+  }
+
+  &__button {
+    @include outlineButton;
+  }
+}
+

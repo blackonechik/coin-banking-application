@@ -1,0 +1,207 @@
+@import "base/typography";
+@import "base/_inputs";
+@import "base/_buttons";
+@import "base/_colors";
+
+.account {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__number {
+    @include titleText;
+    font-weight: 400;
+  }
+
+  &__button {
+    @include filledButton;
+    align-self: center;
+
+    &_disabled {
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  &__balance-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__balance-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+  }
+
+  &__balance {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+  }
+
+  &__wrapper {
+    padding: 25px 50px;
+    border-radius: 50px;
+    background: $gray-7;
+
+    &_pay {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_transactions {
+      grid-column: span 2;
+    }
+  }
+
+
+  &__title {
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+  }
+
+  &__pay-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 25px;
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+
+    &_error .account__error-info {
+      opacity: 1;
+    }
+
+    &_error .account__input {
+      border: 1px solid $error;
+    }
+  }
+
+  &__error-info {
+    @include inputError;
+    right: -32px;
+    top: 5px;
+  }
+
+  &__tooltip {
+    @include inputTooltip;
+  }
+
+  &__description {
+    @include semiMediumMediumText;
+  }
+
+  &__input {
+    @include input;
+    width: 300px;
+    height: 44px;
+  }
+
+  &__section {
+    padding: 25px 50px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 20px 0px $blackTransparent;
+    background: $white;
+
+    &_big {
+      grid-column: span 2;
+    }
+  }
+
+  &__graph-container {
+    height: 200px;
+  }
+
+  &__table {
+    margin-bottom: 20px;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.account__error-info:hover .account__tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.table {
+  width: 100%;
+
+  &__column {
+    @include mediumSemiBoldText;
+    width: calc(100% / 4);
+    padding: 20px;
+    color: $white;
+    outline: 1px solid $primary;
+    background-color: $primary;
+
+    &:first-of-type {
+      padding-left: 50px;
+      border-radius: 15px 0 0 15px;
+    }
+
+    &:last-of-type {
+      padding-right: 50px;
+      border-radius: 0 15px 15px 0;
+    }
+  }
+
+  &__cell {
+    @include semiMediumRegularText;
+    color: $gray-2;
+    padding: 20px;
+    border-bottom: 2px solid rgba(0, 82, 255, 0.1);
+
+    &:first-of-type {
+      padding-left: 50px;
+    }
+
+    &:last-of-type {
+      padding-right: 50px;
+    }
+
+    &_down {
+      color: $secondary-4;
+    }
+
+    &_up {
+      color: $success;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@import "../base/_colors";
+@import "../base/_typography";
+
+$smallPaddingSize: 14px 21px;
+$normalPaddingSize: 16px 24px;
+$mediumPaddingSize: 18px 27px;
+
+$smallFontSize: 14px;
+$normalFontSize: 16px;
+$mediumFontSize: 18px;
+
+@mixin defaultButton {
+  font-family: "Ubuntu";
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+}
+
+@mixin filledButton ($p-size: $normalPaddingSize, $f-size: $normalFontSize, $bg-color: $primary) {
+  @include defaultButton;
+  padding: $normalPaddingSize;
+  color: $white;
+  font-size: $normalFontSize;
+  font-weight: 500;
+  border-radius: 7px;
+  background-color: $bg-color;
+  transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #5896db;
+  }
+
+  &:active {
+    background-color: #0c4a8e;
+  }
+
+  &:disabled {
+    background-color: $gray-5;
+    opacity: 0.5;
+  }
+}
+
+@mixin outlineButton ($p-size: $normalPaddingSize, $f-size: $normalFontSize) {
+  @include defaultButton;
+  padding: $normalPaddingSize;
+  color: $primary;
+  font-size: $normalFontSize;
+  border: 2px solid $primary;
+  border-radius: 7px;
+  background-color: $white;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  &:hover {
+    border-color: #5997db;
+    background-color: #a0c3eb;
+  }
+
+  &:active {
+    border-color: #116acc;
+    background-color: #cfe1f5;
+  }
+
+  &:disabled {
+    color: #c7ccd3;
+    border-color: #c7ccd3;
+    background-color: $white;
+  }
+}
+
+@mixin tagButton {
+  @include defaultButton;
+  padding: 5px 16px;
+  font-size: 14px;
+  background-image: url("../assets/images/icons/tag_button.svg");
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+@mixin textButton {
+  @include defaultButton;
+  padding: 6px 24px;
+  font-size: 16px;
+  color: $primary;
+  background-color: $white;
+}
+
+@mixin iconButton {
+  @include defaultButton;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: $primary;
+  background-image: url("../assets/images/icons/plus.svg");
+  background-repeat: no-repeat;
+}
+
+@mixin dotsButton {
+  @include defaultButton;
+  width: 20px;
+  height: 20px;
+  background-color: $white;
+  background-image: url("../assets/images/icons/dots.svg");
+  background-repeat: no-repeat;
+}

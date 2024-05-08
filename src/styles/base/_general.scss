@@ -1,0 +1,82 @@
+@import "../base/typography";
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.main {
+  padding: 50px 0;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.title {
+  @include titleText;
+  margin: 0;
+}
+
+.sn-notify {
+  padding: 12px 24px;
+}
+
+.sn-notify-close {
+  top: 15px;
+}
+
+.sn-notify-text {
+  color: var(--sn-notify-border-color) !important;
+  @include semiMediumRegularText;
+}
+
+#nprogress {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#nprogress .spinner-icon {
+  width: 50px;
+  height: 50px;
+  border: solid 8px transparent;
+  border-top-color: #116ACC;
+  border-left-color: #116ACC;
+}

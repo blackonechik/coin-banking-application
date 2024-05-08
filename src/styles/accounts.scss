@@ -1,0 +1,27 @@
+@import "base/_typography";
+@import "base/_buttons";
+
+.accounts {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 51px;
+  }
+
+  &__left {
+    display: flex;
+    gap: 35px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 70px 50px;
+  }
+
+  &__button {
+    @include filledButton;
+  }
+}

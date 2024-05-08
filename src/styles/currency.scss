@@ -1,0 +1,194 @@
+@import "base/_typography";
+@import "base/_buttons";
+@import "base/inputs";
+
+.currency {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  &__title {
+    @include mediumBoldText;
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+
+  &__card {
+    margin-bottom: 44px;
+    padding: 50px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 20px 0px $blackTransparent;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__right {
+    padding: 50px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 20px 0px $blackTransparent;
+    background-color: #e5e5e5;
+  }
+
+  &__item {
+    @mixin dashedLine {
+      content: '';
+      flex-grow: 1;
+      order: 2;
+      margin: 0 10px;
+    }
+
+    display: flex;
+    justify-content: space-between;
+
+    &::before {
+      @include dashedLine;
+      border-bottom: 1px dashed $black;
+    }
+
+    &_down {
+      &::before {
+        @include dashedLine;
+        border-bottom: 1px dashed $secondary-4;
+        /* Параметры линии */
+      }
+
+      &::after {
+        content: '';
+        order: 4;
+        margin-left: 15px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid $secondary-4;
+        transform: translateY(3px);
+      }
+    }
+
+    &_up {
+      &::before {
+        @include dashedLine;
+        border-bottom: 1px dashed $success;
+        /* Параметры линии */
+      }
+
+      &::after {
+        content: '';
+        order: 4;
+        margin-left: 15px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $success;
+        transform: translateY(-10px);
+      }
+    }
+  }
+
+  &__code {
+    order: 1;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23px;
+  }
+
+  &__amount {
+    order: 3;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+  }
+}
+
+.exchange {
+  padding: 50px;
+  border-radius: 50px;
+  box-shadow: 0px 5px 20px 0px $blackTransparent;
+
+  &__wrapper {
+    display: flex;
+    gap: 25px;
+  }
+
+  &__title {
+    @include mediumBoldText;
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+
+  &__fromTo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .dropdown {
+      min-width: 134px;
+      height: 44px;
+    }
+  }
+
+  &__text {
+    @include semiMediumMediumText;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &_error .exchange__error-info {
+      opacity: 1;
+    }
+
+    &_error .exchange__input {
+      border: 1px solid $error;
+    }
+  }
+
+  &__error-info {
+    @include inputError;
+    right: -24px;
+    top: 5px;
+  }
+
+  &__tooltip {
+    @include inputTooltip;
+  }
+
+  &__input {
+    @include input;
+    width: 100%;
+    height: 44px;
+  }
+
+  &__button {
+    @include filledButton;
+  }
+}
+
+.exchange__error-info:hover .exchange__tooltip {
+  opacity: 1;
+  visibility: visible;
+}

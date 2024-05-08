@@ -1,0 +1,35 @@
+@mixin sprite-icon ($icon, $size: 24px) {
+  padding-left: 35px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: $size;
+    height: $size;
+    background-image: url("../assets/images/icons/#{$icon}.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+$icons: alarm, arrow, calendar, check, checkbox, checkbox_checked, checkbox_checked-filled,
+  checkbox_square, circle_check, close_big, error, error-filled, filter, filter-filled,
+  help_circle, help_circle-filled, home, home-filled, mail, message_writing, near_me-filled,
+  notification-filled, settings, settings-filled, slider_03, trash_full, user_square,
+  warning, warning-filled;
+
+@each $icon in $icons {
+  .#{$icon} {
+    @include sprite-icon($icon);
+  }
+}
+
+@mixin errorIcon($size: 24px) {
+  width: $size;
+  height: $size;
+  background-image: url("../assets/images/icons/warning-filled.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
